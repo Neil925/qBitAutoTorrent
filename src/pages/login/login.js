@@ -1,32 +1,46 @@
 // import React, {useState} from "react";
 import React, { Component } from "react";
-// import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import "./login.css";
 
 class Login extends Component {
+  constructor() {
+    super();
+    this.state = {
+      username: "",
+      password: "",
+    };
+  }
+
+  onChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(this.state);
+  };
+
   render() {
     return (
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-4">
             <div className="main">
-              <form>
-                <div className="form-group">
-                  <label htmlFor="username">Username</label>
-                  <input type="text" className="form-control" name="username" id="username"></input>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="password">Password</label>
-                  <input type="password" className="form-control" name="password" id="password"></input>
-                </div>
-                <button type="submit" className="btn btn-primary">
+              <Form onSubmit={this.handleSubmit}>
+                <Form.Group>
+                  <Form.Label>username</Form.Label>
+                  <Form.Control type="text" placeholder="username" name="username" onChange={this.onChange} />
+                </Form.Group>
+                <Form.Group className="mb-3">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control type="password" placeholder="password" name="password" onChange={this.onChange} />
+                </Form.Group>
+                <Button variant="primary" type="submit">
                   Submit
-                </button>
-              </form>
+                </Button>
+              </Form>
             </div>
-          </div>
-        </div>
-      </div>
     );
   }
 }
