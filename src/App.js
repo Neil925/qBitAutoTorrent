@@ -1,25 +1,23 @@
 import './App.css';
-import { Link } from "react-router-dom";
+import Home from './pages/home/home';
+import Login from './pages/login/login';
+import Error from './pages/error/error';
 import React from 'react';
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { withCookies } from 'react-cookie';
 
 class App extends React.Component {
   render() {
+    const login = false;
+
     return (
-      <div className="App" >
-        <header className="App-header">
-          <h1>qBitAutoTorrent Main Page</h1>
-          <nav
-            style={{
-              borderBottom: "solid 1px",
-              paddingBottom: "1rem",
-            }}
-          >
-            <Link to="/login">login</Link> |{" "}
-            <Link to="/auto">Auto Torrent</Link>
-          </nav>
-        </header>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={login ? <Home /> : <Navigate to="/login" />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </BrowserRouter>
     );
   }
 }
