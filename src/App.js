@@ -1,12 +1,9 @@
 import './App.css';
 import { Link } from "react-router-dom";
 import React from 'react';
+import { withCookies } from 'react-cookie';
 
 class App extends React.Component {
-  componentDidMount() {
-
-  }
-
   render() {
     return (
       <div className="App" >
@@ -27,4 +24,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withCookies(App);
