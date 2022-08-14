@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Login from './pages/login/login';
+import Error from './pages/error/error';
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import { CookiesProvider } from 'react-cookie';
