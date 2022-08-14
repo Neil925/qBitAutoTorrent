@@ -1,40 +1,34 @@
-import React, {useState} from "react";
-import Form from "react-bootstrap/form";
-import Container from "react-bootstrap/container";
-import Row from "react-bootstrap/row";
-import Col from "react-bootstrap/col";
-import Button from "react-bootstrap/Button";
+// import React, {useState} from "react";
+import React, { Component } from "react";
+// import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import "./login.css";
 
 class Login extends Component {
-
-    const Login = ()=> {
-        const [data, setData] = useState('');
-    }
-
-    const handleChange = ({ target }) => {
-        const { name, value } = target;
-        const newData = Object.assign({}, data, { [name]: value });
-        setData(newData);
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(data);
-    }
-
-    render() {
-        return (
-            <Container>
-                <Row className="justify-content-center">
-                    <Col sm={8}>
-                        <Form onSubmit={handleSubmit}>
-                        </Form>
-                    </Col>
-                </Row>
-            </Container>
-        );
-    }
+  render() {
+    return (
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-4">
+            <div className="main">
+              <form>
+                <div className="form-group">
+                  <label htmlFor="username">Username</label>
+                  <input type="text" className="form-control" name="username" id="username"></input>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password">Password</label>
+                  <input type="password" className="form-control" name="password" id="password"></input>
+                </div>
+                <button type="submit" className="btn btn-primary">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Login;
