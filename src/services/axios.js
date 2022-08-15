@@ -25,6 +25,8 @@ const AxiosService = {
             console.log(response);
 
             Cookies.set("QBIT-LOGIN", "true");
+
+            return response;
         } catch (error) {
             console.error(error);
         }

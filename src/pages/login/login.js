@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./login.css";
 import AxiosService from "../../services/axios";
-// import { withNavigation } from 'react-'
+import { useNavigate } from "react-router-dom";
 
 class Login extends Component {
   constructor() {
@@ -20,11 +20,15 @@ class Login extends Component {
     });
   };
 
-  handleSubmit = (event) => {
+
+  handleSubmit = async (event) => {
     event.preventDefault();
     console.log(this.state);
-    AxiosService.sendLogin(this.state);
-    // this.props.navigation.navigate('/')
+    let response = await AxiosService.sendLogin(this.state);
+
+    if (response.data.includes("Ok.")) {
+      this.props.navigation('/');
+    }
   };
 
   render() {
@@ -48,4 +52,8 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default function (props) {
+  const navigation = useNavigate();
+
+  return <Login {...props} navigation={navigation} />;
+}
