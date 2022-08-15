@@ -5,10 +5,11 @@ import Error from './pages/error/error';
 import React from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { withCookies } from 'react-cookie';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
   render() {
-    const login = false;
+    const login = true;
 
     return (
       <BrowserRouter>
