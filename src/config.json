@@ -1,0 +1,4 @@
+{
+    "developmentMode": true,
+    "developmentApi": "http://localhost:8080"
+}

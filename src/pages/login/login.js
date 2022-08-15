@@ -1,8 +1,9 @@
-// import React, {useState} from "react";
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./login.css";
+import AxiosService from "../../services/axios";
+// import { withNavigation } from 'react-'
 
 class Login extends Component {
   constructor() {
@@ -22,7 +23,8 @@ class Login extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     console.log(this.state);
-
+    AxiosService.sendLogin(this.state);
+    // this.props.navigation.navigate('/')
   };
 
   render() {
