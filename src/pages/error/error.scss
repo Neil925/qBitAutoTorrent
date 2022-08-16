@@ -1,11 +1,10 @@
-.Error-header {
-    color: #734f96;
-    text-align: center;
-    font-size: xx-large;
+@import "../../variable";
+
+body {
+    background-color: $customBackground;
 }
 
-.below {
-    color: #734f96;
-    text-align: center;
-    font-size: xx-large;
+.error {
+    background-color: $customDarkGrey;
+    color: white;
 }
