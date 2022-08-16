@@ -15,7 +15,7 @@ const AxiosService = {
 
         qBitApi.defaults.baseURL = `${origin}/api/v2/`;
     },
-    sendLogin: async function (info) {
+    Login: async function (info) {
         try {
             const params = new URLSearchParams();
             params.append('username', info.username);
@@ -26,6 +26,17 @@ const AxiosService = {
 
             Cookies.set("QBIT-LOGIN", "true");
 
+            return response;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+    Logout: async function () {
+        try {
+            const response = await qBitApi.post(`auth/logout`);
+            console.log(response);
+
+            Cookies.remove("QBIT-LOGIN");
             return response;
         } catch (error) {
             console.error(error);

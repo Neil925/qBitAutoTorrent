@@ -1,5 +1,5 @@
 import './App.css';
-import Home from './pages/home/home';
+import Dashboard from './pages/dashboard/dashboard';
 import Login from './pages/login/login';
 import Error from './pages/error/error';
 import React from 'react';
@@ -17,7 +17,7 @@ export default function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={login ? <Home /> : <Navigate to="/login" />} />
+        <Route path="/" element={login ? <Dashboard /> : <Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Error />} />
       </Routes>

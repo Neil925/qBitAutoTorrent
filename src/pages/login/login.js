@@ -24,7 +24,7 @@ class Login extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     console.log(this.state);
-    let response = await AxiosService.sendLogin(this.state);
+    let response = await AxiosService.Login(this.state);
 
     if (response.data.includes("Ok.")) {
       this.props.navigation("/");
@@ -60,6 +60,7 @@ class Login extends Component {
   }
 }
 
+// eslint-disable-next-line
 export default function (props) {
   const navigation = useNavigate();
 
