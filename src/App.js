@@ -6,12 +6,13 @@ import React from 'react';
 import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
 import AxiosService from './services/axios';
 import Cookies from 'js-cookie';
+import Config from './config';
 
 export default function App() {
   AxiosService.setUp(window.location.origin);
 
   var cookie = Cookies.get('QBIT-LOGIN');
-  const login = cookie !== undefined;
+  const login = (cookie !== undefined) || Config.loginOverride;
 
   return (
     <HashRouter>
