@@ -1,7 +1,7 @@
 // import React, {useState} from "react";
 import React, { Component } from "react";
 import { Alert } from "react-bootstrap";
-import "./error.css";
+import "./error.scss";
 
 class Error404 extends Component {
   render() {

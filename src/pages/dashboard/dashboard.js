@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './dashboard.css';
+import './dashboard.scss';
 import AxiosService from '../../services/axios';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
