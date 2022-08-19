@@ -47,8 +47,8 @@ class Login extends Component {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="password" name="password" onChange={this.onChange} />
             </Form.Group>
+            <Button variant="primary" type="submit">Submit</Button>
           </Form>
-          <Button variant="primary" type="submit">Submit</Button>
         </Card.Body>
       </Card>
     );

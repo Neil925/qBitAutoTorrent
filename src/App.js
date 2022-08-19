@@ -17,8 +17,9 @@ export default function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={login ? <Dashboard /> : <Navigate to="/login" />} />
+        <Route index path="/" element={login ? <Dashboard /> : <Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/auto" element={<Error />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </HashRouter>
