@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './navigation.css';
+import './navigation.scss';
 import AxiosService from '../../services/axios';
 import { useNavigate } from "react-router-dom";
 import { Nav, Navbar, Container } from 'react-bootstrap';
