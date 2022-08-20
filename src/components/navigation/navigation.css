@@ -1,0 +1,7 @@
+#nav {
+    flex-direction: row;
+}
+
+.navLink {
+    margin-right: 1rem;
+}

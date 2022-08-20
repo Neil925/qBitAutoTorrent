@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
 import './dashboard.scss';
 import AxiosService from '../../services/axios';
-import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import Navigation from '../../components/navigation/navigation';
 
 class Dashboard extends Component {
 
     logout = async () => {
         await AxiosService.Logout();
-        this.props.navigation('/');
+        this.props.navigation('login');
     }
 
     render() {
         return (
             <div className="Home" >
-                <nav className='navbar'>
-                    <ul className='unlisted'>
-                        <Link to="auto"><h2>Auto Torrent</h2></Link>
-                        <Link to="logout"><h2>Logout</h2></Link>
-                    </ul>
-                </nav>
+                <Navigation />
+                <h1>Dashboard</h1>
             </div>
         );
     }
