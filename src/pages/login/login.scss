@@ -1,0 +1,15 @@
+@import "../../variable";
+
+.main{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: $customBackground;
+}   
+
+.tester {
+    display: flex;
+    color: white;
+    background-color: #282827;
+}

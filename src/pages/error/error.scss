@@ -1,0 +1,10 @@
+@import "../../variable";
+
+body {
+    background-color: $customBackground;
+}
+
+.error {
+    background-color: $customDarkGrey;
+    color: white;
+}
